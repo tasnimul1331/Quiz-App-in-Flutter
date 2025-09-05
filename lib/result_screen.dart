@@ -52,7 +52,7 @@ class ResultScreen extends StatelessWidget {
               child: SingleChildScrollView(child: QuestionSummary(summaryData)),
             ),
             SizedBox(height: 30),
-            TextButton(
+            TextButton.icon(
               onPressed: () {
                 switchScreen();
                 selectedAnswers.clear();
@@ -61,7 +61,8 @@ class ResultScreen extends StatelessWidget {
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
               ),
-              child: const Text('Restart Quiz'),
+              icon: Icon(Icons.refresh),
+              label: const Text('Restart Quiz'),
             ),
           ],
         ),

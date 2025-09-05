@@ -48,7 +48,7 @@ class ResultScreen extends StatelessWidget {
             SizedBox(height: 30),
 
             SizedBox(
-              height: 100,
+              height: 300,
               child: SingleChildScrollView(child: QuestionSummary(summaryData)),
             ),
             SizedBox(height: 30),

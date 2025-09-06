@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 
 class QuestionSummary extends StatelessWidget {
-  QuestionSummary(this.summaryData, {super.key});
+  const QuestionSummary(this.summaryData, {super.key});
 
   final List<Map<String, Object>> summaryData;
-  var CorColor;
 
   @override
   Widget build(context) {
     return Column(
       children: summaryData.map((data) {
-        if (data['user_answer'] == data['correct_answer']) {
-          CorColor = Colors.cyanAccent;
-        } else {
-          CorColor = const Color.fromARGB(255, 251, 23, 23);
-        }
         return Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -24,7 +18,9 @@ class QuestionSummary extends StatelessWidget {
               alignment: Alignment.center,
               margin: EdgeInsets.only(right: 20, left: 5),
               decoration: BoxDecoration(
-                color: CorColor,
+                color: (data['user_answer'] == data['correct_answer'])
+                    ? Colors.cyanAccent
+                    : Colors.red,
                 borderRadius: BorderRadius.circular(50),
               ),
               child: Text(
